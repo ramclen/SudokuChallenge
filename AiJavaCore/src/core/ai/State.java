@@ -15,4 +15,6 @@ public abstract class State{
     }
 
     public abstract boolean equals(State otherState);
+
+    public abstract boolean isFinal();
 }

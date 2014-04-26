@@ -17,14 +17,14 @@ public abstract class Search {
 
     protected Search(Enviroment enviroment) {
         this.enviroment = enviroment;
-        this.currentState = enviroment.getInitialState();
+        this.currentState = enviroment.getSudokuState();
         this.finalState = enviroment.getFinalState();
         this.visitedStates = new ArrayList<>();
     }
 
     public State searchFinalState() {
         setStartTime();
-        while (!currentState.equals(finalState)) {
+        while (!currentState.isFinal()) {
             updateQueueList(getChilds(currentState));
             markStateAsVisited(currentState);
             updateCurrentState();

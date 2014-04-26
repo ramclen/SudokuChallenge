@@ -1,8 +1,10 @@
 package core.ai.searches;
 
 import core.ai.Enviroment;
+import core.ai.Heuristic;
 import core.ai.Search;
 import core.ai.State;
+
 import java.util.List;
 import java.util.Stack;
 
@@ -10,7 +12,8 @@ public class DepthFirst extends Search {
 
     private Stack<State> openList;
     private double maxOpenListSize;
-    public DepthFirst(Enviroment enviroment) {
+
+    public DepthFirst(Heuristic sudokuHeuristic, Enviroment enviroment) {
         super(enviroment);
         this.openList = new Stack<>();
     }
